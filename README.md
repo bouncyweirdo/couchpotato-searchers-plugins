@@ -1,0 +1,1 @@
+# couchpotato-searchers-plugins
