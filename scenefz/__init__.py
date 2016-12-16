@@ -1,7 +1,7 @@
 from couchpotato.core.helpers.encoding import tryUrlencode
 from couchpotato.core.media.movie.providers.base import MovieProvider
 
-from .main import Base
+from scenefz.main import Base
 
 
 def autoload():
@@ -22,6 +22,7 @@ class SceneFZ(MovieProvider, Base):
             'incldead': self.getCatId(quality)[0],
             'complex_search': 0,
         })
+        print('url')
         return query
 
 
