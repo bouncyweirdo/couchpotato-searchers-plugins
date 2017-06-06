@@ -41,7 +41,7 @@ class Base(TorrentProvider):
                             log.debug('No torrent title and download url.')
                             continue
 
-                        seeders = tryInt(cells[6].find("a").getText(strip=True))
+                        seeders = tryInt(''.join([s for s in cells[6].getText(strip=True) if s.isdigit()]))
                         leechers = tryInt(cells[7].getText(strip=True))
 
                         detail_url = self.urls['baseurl'] % cells[1].find("a")["href"]

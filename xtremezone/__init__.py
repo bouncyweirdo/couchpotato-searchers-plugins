@@ -18,7 +18,7 @@ class XtremeZone(MovieProvider, Base):
 
     def buildUrl(self, title, media, quality):
         query = tryUrlencode({
-            'search': '"%s" %s' % (title, media['info']['year']),
+            'search': '%s %s' % (title, media['info']['year']),
             'incldead=0&{}'.format(self.getCatId(quality)[0]): 1,
         })
         return query
