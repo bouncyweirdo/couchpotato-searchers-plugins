@@ -28,7 +28,7 @@ class Base(TorrentProvider):
 
             try:
                 result_table = html.find('div', attrs={'class': 'visitedlinks'})
-                if 'nu s-a gasit nimic!' not in data.lower() or result_table:
+                if 'Nu s-a găsit nimic!' not in data.lower() or result_table:
 
                     entries = result_table.find_all('div', attrs={'class': 'torrentrow'})
                     for result in entries[0:]:
