@@ -61,3 +61,6 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 .idea/
+
+# ignore local settings
+local_settings.py

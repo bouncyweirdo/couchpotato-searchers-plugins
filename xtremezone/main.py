@@ -41,12 +41,12 @@ class Base(TorrentProvider):
                             log.debug('No torrent title and download url.')
                             continue
 
-                        seeders = tryInt(''.join([s for s in cells[6].getText(strip=True) if s.isdigit()]))
-                        leechers = tryInt(cells[7].getText(strip=True))
+                        seeders = tryInt(''.join([s for s in cells[8].getText(strip=True) if s.isdigit()]))
+                        leechers = tryInt(''.join([s for s in cells[9].getText(strip=True) if s.isdigit()]))
 
                         detail_url = self.urls['baseurl'] % cells[1].find("a")["href"]
                         torrent_id = detail_url.split('=')[1].split('&')[0]
-                        torrent_size = cells[5].getText(strip=True)
+                        torrent_size = cells[6].getText(strip=True)
                         size = self.parseSize(torrent_size) or -1
 
                         results.append({
@@ -66,7 +66,7 @@ class Base(TorrentProvider):
             log.debug('No search results found.')
 
     def getLoginParams(self):
-        log.info('Logging in to www.myxz.org with user [{}]'.format(self.conf('username')))
+        log.info('Logging in to {} with user [{}]'.format(self.urls['test'], self.conf('username')))
         return {
             'username': self.conf('username'),
             'password': self.conf('password'),
